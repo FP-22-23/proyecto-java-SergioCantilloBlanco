@@ -4,5 +4,7 @@ public record tipoAuxiliar(String genero, String educacionParental) {
 	
 	
 	
+	
+	
 
 }

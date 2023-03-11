@@ -37,6 +37,9 @@ public interface Estudiante extends Comparable<Estudiante> {
 		public Integer getDuracion();
 		public void setDuracion(Integer f);
 		
+		public tipoAuxiliar getTipo();
+
+		
 		
 		
 		;

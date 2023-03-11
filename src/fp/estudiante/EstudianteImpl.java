@@ -3,6 +3,7 @@ package fp.estudiante;
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 import fp.utiles.Checkers;
 
@@ -22,7 +23,7 @@ public class EstudianteImpl implements Estudiante{
 	private List<String> lista = new LinkedList<String>();
 	public tipoAuxiliar tipo;
 	
-	public double nota_Media (double mates, double lectura, double escrito) {
+	public double getMedia () {
 		double media = (mates+lectura+escrito)/3;
 		return media;
 	}
@@ -41,6 +42,13 @@ public class EstudianteImpl implements Estudiante{
 		this.escrito = escrito;
 		this.fecha = fecha;
 	}
+	public EstudianteImpl(String educacionParental, tipoAuxiliar tipo) {
+		super();
+		this.educacionParental = educacionParental;
+		this.tipo = tipo;
+	}
+
+
 	public EstudianteImpl(double mates, double lectura, double escrito) {
 		Checkers.check("Fuera de limite",mates <= 100 && mates >= 0);
 		Checkers.check("Fuera de limite",lectura <= 100 && lectura >= 0);
@@ -115,6 +123,16 @@ public class EstudianteImpl implements Estudiante{
 		return escrito;
 	}
 
+	public tipoAuxiliar getTipo() {
+		return tipo;
+	}
+
+
+	public void setTipo(tipoAuxiliar tipo) {
+		this.tipo = tipo;
+	}
+
+
 	public void setEscrito(Double escrito) {
 		Checkers.check("Fuera de limite",escrito <= 100 && escrito >= 0);
 		this.escrito = escrito;
@@ -165,17 +183,32 @@ public class EstudianteImpl implements Estudiante{
 		}
 		return r;
 	}
-	
-	public boolean equals(Object o) {
-		boolean r = false;
-		if (o instanceof EstudianteImpl) {
-			EstudianteImpl p = (EstudianteImpl) o;
-		r = this.getGrupo().equals(p.getGrupo()) &&
-		this.getGenero().equals(p.getGenero());
-		}
-		return r;
-		}
 
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(almuerzo, duracion, educacionParental, escrito, fecha, genero, grupo, lectura, lista, mates,
+				preparacion, tipo);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EstudianteImpl other = (EstudianteImpl) obj;
+		return Objects.equals(almuerzo, other.almuerzo) && Objects.equals(duracion, other.duracion)
+				&& Objects.equals(educacionParental, other.educacionParental) && Objects.equals(escrito, other.escrito)
+				&& Objects.equals(fecha, other.fecha) && Objects.equals(genero, other.genero) && grupo == other.grupo
+				&& Objects.equals(lectura, other.lectura) && Objects.equals(lista, other.lista)
+				&& Objects.equals(mates, other.mates) && Objects.equals(preparacion, other.preparacion)
+				&& Objects.equals(tipo, other.tipo);
+	}
+	
 
 
 
