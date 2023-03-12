@@ -12,7 +12,7 @@ public class Estudiante_Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		EstudianteImpl f1 = new EstudianteImpl("Female", B, 34, false, true, (double) 45, (double) 67, (double) 90, LocalDate.of(2000, 6, 30));
+		EstudianteImpl f1 = new EstudianteImpl("Female", B, 34, false, true, (double) 45, (double) 67, (double) 90, LocalDate.of(2000, 6, 30),null,null);
 
 		EstudianteImpl f2 = new EstudianteImpl(4,78,67);
 		
@@ -34,6 +34,7 @@ public class Estudiante_Test {
 		System.out.println(f1.getFecha());
 		System.out.println(f1.getDuracion());
 		System.out.println(f2.getMedia());
+		System.out.println(f1.getLista());
 		// me falta el del list y el del tipo
 		
 		//Sets
@@ -47,6 +48,7 @@ public class Estudiante_Test {
 		f2.setEscrito(22.0);
 		f1.setFecha(LocalDate.of(2022, 5, 9));
 		f1.setDuracion(49);
+		f1.setLista(null);
 		// me falta el del list y el del tipo
 		
 		if (f1.equals(f2)){ 
@@ -55,9 +57,18 @@ public class Estudiante_Test {
 			System.out.println("Diferentes estudiantes");
 		}
 		
-		//me falta el compareto
+		int resp = f1.compareTo(f2);
+	    if(resp == 0) {
+			System.out.println("Son los mismos estudiantes");
+		} 
+		else if(resp > 0) {
+			System.out.println("El estudiante f1 va por delante que el estudiante f2");
+		}
+		else
+			System.out.println("El estudiante f2 va por delante que el estudiante f1");
+		}
 		
 		
 	}
 
-}
+

@@ -1,6 +1,7 @@
 package fp.estudiante;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 
@@ -38,8 +39,10 @@ public interface Estudiante extends Comparable<Estudiante> {
 		public void setDuracion(Integer f);
 		
 		public tipoAuxiliar getTipo();
+	
 
-		
+		public List<String> getLista();
+		public void setLista(List<String> b);
 		
 		
 		;

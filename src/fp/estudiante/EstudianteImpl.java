@@ -29,7 +29,7 @@ public class EstudianteImpl implements Estudiante{
 	}
 	
 	
-	public EstudianteImpl(String genero, grupo grupo, Integer duracion,Boolean almuerzo,Boolean preparacion,Double mates,Double lectura,Double escrito,LocalDate fecha) {
+	public EstudianteImpl(String genero, grupo grupo, Integer duracion,Boolean almuerzo,Boolean preparacion,Double mates,Double lectura,Double escrito,LocalDate fecha, List<String> lista,tipoAuxiliar tipo) {
 		Checkers.check("El genero no puede estar vacío",!genero.equals(""));
 		Checkers.check("La duracion no puede ser superior a 90 minutos.",duracion<=90);
 		this.genero= genero;
@@ -41,7 +41,14 @@ public class EstudianteImpl implements Estudiante{
 		this.lectura= lectura;
 		this.escrito = escrito;
 		this.fecha = fecha;
+		this.lista = lista;
+		this.tipo = tipo;
 	}
+
+
+
+
+
 	public EstudianteImpl(String educacionParental, tipoAuxiliar tipo) {
 		super();
 		this.educacionParental = educacionParental;
@@ -59,6 +66,14 @@ public class EstudianteImpl implements Estudiante{
 		
 	}
 	
+	public List<String> getLista() {
+		return lista;
+	}
+
+
+	public void setLista(List<String> lista) {
+		this.lista = lista;
+	}
 
 	public String getGenero() {
 		return genero;
@@ -208,7 +223,6 @@ public class EstudianteImpl implements Estudiante{
 				&& Objects.equals(mates, other.mates) && Objects.equals(preparacion, other.preparacion)
 				&& Objects.equals(tipo, other.tipo);
 	}
-	
 
 
 
