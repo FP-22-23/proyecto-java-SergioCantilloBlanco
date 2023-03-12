@@ -3,6 +3,8 @@ package fp.estudiante;
 import java.time.LocalDate;
 import java.util.List;
 
+import fp.common.tipoAuxiliar;
+
 
 
 public interface Estudiante extends Comparable<Estudiante> {
