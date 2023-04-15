@@ -13,7 +13,7 @@ public class Estudiante_Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		EstudianteImpl f1 = new EstudianteImpl("Female", B, 34, false, true, (double) 45, (double) 67, (double) 90, LocalDate.of(2000, 6, 30),new LinkedList (),null);
+		EstudianteImpl f1 = new EstudianteImpl("Female", B, 34, "included", true, (double) 45, (double) 67, (double) 90, LocalDate.of(2000, 6, 30));
 
 		EstudianteImpl f2 = new EstudianteImpl(4,78,67);
 		
@@ -35,22 +35,22 @@ public class Estudiante_Test {
 		System.out.println(f1.getFecha());
 		System.out.println(f1.getDuracion());
 		System.out.println(f2.getMedia());
-		System.out.println(f1.getLista());
-		// me falta el del list y el del tipo
+		System.out.println(f1.getListaNotas());
+
 		
 		//Sets
 		f1.setGenero("Male");
 		f1.setGrupo(grupo.A);
 		f1.setEducacionParental("College");
-		f1.setAlmuerzo(true);
+		f1.setAlmuerzo("not included");
 		f1.setPreparacion(false);
 		f2.setMates(45.0);
 		f2.setLectura(67.0);
 		f2.setEscrito(22.0);
 		f1.setFecha(LocalDate.of(2022, 5, 9));
 		f1.setDuracion(49);
-		f1.setLista(null);
-		// me falta el del list y el del tipo
+		f1.setListaNotas(null);
+
 		
 		if (f1.equals(f2)){ 
 			System.out.println("Mismo estudiante");
@@ -71,5 +71,31 @@ public class Estudiante_Test {
 		
 		
 	}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

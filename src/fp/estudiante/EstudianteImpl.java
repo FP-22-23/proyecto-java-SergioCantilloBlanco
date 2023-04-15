@@ -180,13 +180,13 @@ public class EstudianteImpl implements Estudiante{
 		return "Estudiante [genero=" + genero + 
 				", grupo=" + grupo + 
 				", educacion parental=" + educacionParental
-				+ "almuerzo=" + almuerzo + 
-				"preparacion=" + preparacion + 
-				"Nota mates=" + mates +
-				"Nota lectura=" + lectura +
-				"Nota escrito=" + escrito +
-				"fecha de realizacion de examen=" + fecha +
-				"duracion=" + duracion +"]";
+				+ ", almuerzo=" + almuerzo + 
+				", preparacion=" + preparacion + 
+				", Nota mates=" + mates +
+				", Nota lectura=" + lectura +
+				", Nota escrito=" + escrito +
+				", fecha de realizacion de examen=" + fecha +
+				", duracion=" + duracion +"]";
 	}
 	
 	public int compareTo(Estudiante p) {
