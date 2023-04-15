@@ -1,5 +1,5 @@
-# Proyecto del Segundo Cuatrimestre Fundamentos de Programación (Curso  \<XX\>/\<YY\>)
-Autor/a: \<nombre del autor\>   uvus:\<uvus del autor\>
+# Proyecto del Segundo Cuatrimestre Fundamentos de Programación (Curso  2022-2023)
+Autor/a: Sergio Cantillo   uvus:KRC2226
 
 Aquí debes añadir la descripción del dataset y un enunciado del dominio del proyecto.
 
@@ -35,7 +35,6 @@ y la duracion del examen se han generado de forma aleatoria. A continuación se 
 * Fecha: de tipo Fecha y Hora, representa la fecha de la realizacion del examen.
 * Duracion: de tipo duracion, representa los minutos empleados por el alumno en completar el examen.
 
-....
 
 ## Tipos implementados
 
@@ -91,25 +90,25 @@ Descripción de los tipos auxiliares que sean necesarios añadir al proyecto.
 tipo : el auxiliar introduce otro genero y la otra  educacion parental.
 
 ### Factoría
-Descripción breve de la factoría.
+Clase de factoría para construir objetos de tipo Estudiante.
 
-- _método 1_: Descripción del método 1.
--	_método 2_: Descripción del método 2.
+-  ContenedorEstudiantes leeEstudiante(String rutaFichero) :Crea un objeto de tipo Estudiante a partir de la información recogida en el archivo csv, cuya ruta se da como parámetro.
+
+-	 EstudianteImpl parsearEstudiante(String linea): realiza el parseo de cada propiedad basica del fichero csv.
 
 ### Tipo Contenedor
 
-Descripción breve del tipo contenedor.
+Clase contenedora de los objetos de tipo Estudiante.
 
 **Propiedades**:
 
-- _propiedad1_, de tipo \<Tipo1\>, consultable. 
-- _propiedad2_, de tipo \<Tipo2\>, consultable y modificable. 
+- estudiante, de tipo List<EstudianteImpl>, consultable. Lista de estudiantes.
 - ...
 - 
 **Constructores**: 
 
-- C1: Descripción del constructor 1.
-- C2: Descripción del constructor 2.
+- C1: Constructor por defecto. Crea un objeto de tipo Estudiante sin ningun Estudiante almacenado.
+- C2: C3: Constructor con un parámetro de tipo Stream<EstudianteImpl>. Crea un objeto de tipo Estudiante con los estudiantes incluidos en el Stream dado
 - ...
 
 **Restricciones**:

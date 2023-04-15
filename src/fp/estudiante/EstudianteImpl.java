@@ -1,6 +1,7 @@
 package fp.estudiante;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -14,23 +15,20 @@ public class EstudianteImpl implements Estudiante{
 	private String genero;
 	private grupo grupo;
 	private String educacionParental;
-	private Boolean almuerzo;
+	private String almuerzo;
 	private Boolean preparacion;
 	private Double mates;
 	private Double lectura;
 	private Double escrito;
 	private LocalDate fecha;
 	private Integer duracion;
-	private List<String> lista = new LinkedList<String>();
 	public tipoAuxiliar tipo;
+	private Integer Media;
+	private ArrayList  listaNotas;
+
+
 	
-	public double getMedia () {
-		double media = (mates+lectura+escrito)/3;
-		return media;
-	}
-	
-	
-	public EstudianteImpl(String genero, grupo grupo, Integer duracion,Boolean almuerzo,Boolean preparacion,Double mates,Double lectura,Double escrito,LocalDate fecha, List<String> lista,tipoAuxiliar tipo) {
+	public EstudianteImpl(String genero, grupo grupo, Integer duracion,String almuerzo,Boolean preparacion,Double mates,Double lectura,Double escrito,LocalDate fecha) {
 		Checkers.check("El genero no puede estar vacío",!genero.equals(""));
 		Checkers.check("La duracion no puede ser superior a 90 minutos.",duracion<=90);
 		this.genero= genero;
@@ -42,13 +40,7 @@ public class EstudianteImpl implements Estudiante{
 		this.lectura= lectura;
 		this.escrito = escrito;
 		this.fecha = fecha;
-		this.lista = lista;
-		this.tipo = tipo;
 	}
-
-
-
-
 
 	public EstudianteImpl(String educacionParental, tipoAuxiliar tipo) {
 		super();
@@ -66,15 +58,7 @@ public class EstudianteImpl implements Estudiante{
 		this.escrito=escrito;
 		
 	}
-	
-	public List<String> getLista() {
-		return lista;
-	}
 
-
-	public void setLista(List<String> lista) {
-		this.lista = lista;
-	}
 
 	public String getGenero() {
 		return genero;
@@ -101,11 +85,11 @@ public class EstudianteImpl implements Estudiante{
 		this.educacionParental = educacionParental;
 	}
 
-	public Boolean getAlmuerzo() {
+	public String getAlmuerzo() {
 		return almuerzo;
 	}
 
-	public void setAlmuerzo(Boolean almuerzo) {
+	public void setAlmuerzo(String almuerzo) {
 		this.almuerzo = almuerzo;
 	}
 
@@ -170,6 +154,27 @@ public class EstudianteImpl implements Estudiante{
 		this.duracion = duracion;
 	}
 	
+	public Integer getMedia() {
+		return (int) (mates+lectura+escrito);
+	}
+	public void setMedia(Integer media) {
+		
+	}
+	
+	public ArrayList  getListaNotas() {
+		List<Double> listaNotas = new LinkedList<Double>();
+		listaNotas.add(mates);
+		listaNotas.add(mates);
+		listaNotas.add(mates);
+		return (ArrayList ) listaNotas;
+		}
+
+		public void setListaNotas(ArrayList  listaNotas) {
+			this.listaNotas = listaNotas;
+		}
+
+
+	
 	
 	public String toString() {
 		return "Estudiante [genero=" + genero + 
@@ -203,7 +208,7 @@ public class EstudianteImpl implements Estudiante{
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(almuerzo, duracion, educacionParental, escrito, fecha, genero, grupo, lectura, lista, mates,
+		return Objects.hash(almuerzo, duracion, educacionParental, escrito, fecha, genero, grupo, lectura, mates,
 				preparacion, tipo);
 	}
 
@@ -220,10 +225,11 @@ public class EstudianteImpl implements Estudiante{
 		return Objects.equals(almuerzo, other.almuerzo) && Objects.equals(duracion, other.duracion)
 				&& Objects.equals(educacionParental, other.educacionParental) && Objects.equals(escrito, other.escrito)
 				&& Objects.equals(fecha, other.fecha) && Objects.equals(genero, other.genero) && grupo == other.grupo
-				&& Objects.equals(lectura, other.lectura) && Objects.equals(lista, other.lista)
+				&& Objects.equals(lectura, other.lectura) 
 				&& Objects.equals(mates, other.mates) && Objects.equals(preparacion, other.preparacion)
 				&& Objects.equals(tipo, other.tipo);
 	}
+
 
 
 

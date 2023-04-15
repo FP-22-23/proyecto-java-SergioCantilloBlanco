@@ -1,6 +1,7 @@
 package fp.test;
 
 import java.time.LocalDate;
+import java.util.LinkedList;
 
 import fp.estudiante.EstudianteImpl;
 import fp.estudiante.grupo;
@@ -12,7 +13,7 @@ public class Estudiante_Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		EstudianteImpl f1 = new EstudianteImpl("Female", B, 34, false, true, (double) 45, (double) 67, (double) 90, LocalDate.of(2000, 6, 30),null,null);
+		EstudianteImpl f1 = new EstudianteImpl("Female", B, 34, false, true, (double) 45, (double) 67, (double) 90, LocalDate.of(2000, 6, 30),new LinkedList (),null);
 
 		EstudianteImpl f2 = new EstudianteImpl(4,78,67);
 		
