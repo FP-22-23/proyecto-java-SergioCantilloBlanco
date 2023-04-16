@@ -60,6 +60,11 @@ public class ContenedorEstudiantes {
     	return this.estudiante.stream()
     			.anyMatch(d -> d.getDuracion().compareTo(80) >= 0);  			
     }
+    public Map<String, Long> obtenerNumeroDeComprasPorCatergoria(){
+		return this.estudiante.stream()
+				.collect(Collectors.groupingBy(EstudianteImpl::getGenero,
+						Collectors.counting()));
+	}
     
     
     
@@ -83,6 +88,7 @@ public class ContenedorEstudiantes {
 	public String toString() {
 		return "ContenedorEstudiantes [estudiante=" + estudiante + "]";
 	}
+
     
 	
 

@@ -28,13 +28,14 @@ public class EstudianteImpl implements Estudiante{
 
 
 	
-	public EstudianteImpl(String genero, grupo grupo, Integer duracion,String almuerzo,Boolean preparacion,Double mates,Double lectura,Double escrito,LocalDate fecha) {
+	public EstudianteImpl(String genero, grupo grupo, Integer duracion,String almuerzo,String educacionParental, Boolean preparacion,Double mates,Double lectura,Double escrito,LocalDate fecha) {
 		Checkers.check("El genero no puede estar vacío",!genero.equals(""));
 		Checkers.check("La duracion no puede ser superior a 90 minutos.",duracion<=90);
 		this.genero= genero;
 		this.grupo = grupo;
 		this.duracion = duracion;
 		this.almuerzo= almuerzo;
+		this.educacionParental= educacionParental;
 		this.preparacion = preparacion;
 		this.mates = mates;
 		this.lectura= lectura;

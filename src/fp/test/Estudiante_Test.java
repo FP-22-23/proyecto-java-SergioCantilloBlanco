@@ -13,7 +13,7 @@ public class Estudiante_Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		EstudianteImpl f1 = new EstudianteImpl("Female", B, 34, "included", true, (double) 45, (double) 67, (double) 90, LocalDate.of(2000, 6, 30));
+		EstudianteImpl f1 = new EstudianteImpl("Female", B, 34, "included", "Primary",true, (double) 45, (double) 67, (double) 90, LocalDate.of(2000, 6, 30));
 
 		EstudianteImpl f2 = new EstudianteImpl(4,78,67);
 		

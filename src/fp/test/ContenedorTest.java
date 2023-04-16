@@ -8,12 +8,12 @@ import fp.estudiante.FactoriaEstudiantes;
 import fp.estudiante.grupo;
 
 public class ContenedorTest {
-	private static EstudianteImpl est1 = new EstudianteImpl ("Female", grupo.B, 34, "included", true, (double) 90, (double) 97, (double) 90, LocalDate.of(2000, 6, 30));
-	private static EstudianteImpl est2 = new EstudianteImpl ("Male", grupo.A, 81, "Not included", false, (double) 15, (double) 29, (double) 19, LocalDate.of(2000, 8, 3));
-	private static EstudianteImpl est3 = new EstudianteImpl ("Female", grupo.C, 11, "included", true, (double) 41, (double) 37, (double) 95, LocalDate.of(2000, 1, 2));
+	private static EstudianteImpl est1 = new EstudianteImpl ("Female", grupo.B, 34, "included", "Primary",true, (double) 90, (double) 97, (double) 90, LocalDate.of(2000, 6, 30));
+	private static EstudianteImpl est2 = new EstudianteImpl ("Male", grupo.A, 81, "Not included","Primary", false, (double) 15, (double) 29, (double) 19, LocalDate.of(2000, 4, 3));
+	private static EstudianteImpl est3 = new EstudianteImpl ("Female", grupo.C, 11, "included", "Primary",true, (double) 41, (double) 37, (double) 95, LocalDate.of(2000, 1, 2));
 	
 	private static ContenedorEstudiantes estu = new ContenedorEstudiantes();
-	private static ContenedorEstudiantes estudiante = FactoriaEstudiantes.leeEstudiante("./data/StudentsPerformance-StudentsPerformance.csv");
+	private static ContenedorEstudiantes estudiante = FactoriaEstudiantes.leeEstudiante("C:\\Users\\34684\\eclipse-workspace\\proyecto-java-SergioCantilloBlanco\\Data\\StudentsPerformance - StudentsPerformance.csv");
 
 	public static void main(String[] args) {
 
@@ -32,7 +32,7 @@ public class ContenedorTest {
 		
 		
 		private static void testConstructor() {
-			EstudianteImpl est7 = new EstudianteImpl ("Female", grupo.B, 34, "included", true, (double) 45, (double) 67, (double) 90, LocalDate.of(2000, 6, 30));
+			EstudianteImpl est7 = new EstudianteImpl ("Female", grupo.B, 34, "included","Primary",true, (double) 45, (double) 67, (double) 90, LocalDate.of(2000, 6, 30));
 			System.out.println(est7);
 		}
 		
@@ -60,8 +60,7 @@ public class ContenedorTest {
 
 		
 		
-		//MÉTODOS STREAM: Tratamientos secuenciales(I) (Apartado 4 del proyecto).
-	    //"filter", "allMatch", "anyMatch" (Predicate) (mínimo 2 métodos).		
+		//MÉTODOS STREAM: Tratamientos secuenciales(I) (Apartado 4 del proyecto).	
 		private static void testMenorMedia() {
 			System.out.println("Testeo de MenorMedia");
 			System.out.println("Las medias mas pequeñas son: ");

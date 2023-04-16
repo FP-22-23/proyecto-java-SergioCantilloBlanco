@@ -27,8 +27,8 @@ public class FactoriaEstudiantes {
 		private static EstudianteImpl parsearEstudiante(String linea) {
 			EstudianteImpl res;
 			Checkers.checkNoNull(linea);
-			String[] trozo = linea.split(";");
-			Checkers.check("El formato de la línea no es adecuado", trozo.length == 9);
+			String[] trozo = linea.split(",");
+			Checkers.check("El formato de la línea no es adecuado", trozo.length == 10);
 			String genero =  trozo[0].trim();
 			grupo grupo = null;
 			    if (String.valueOf(trozo[1].trim()) == "groupA") {
@@ -38,22 +38,26 @@ public class FactoriaEstudiantes {
 			    }else if (String.valueOf(trozo[1].trim()) == "groupC"){
 			    	grupo = grupo.C;
 			    }
-			    else {
+			    else if (String.valueOf(trozo[1].trim()) == "groupD"){
 			    	grupo = grupo.D;
 			    }
+			    else {
+			    	grupo = grupo.E;
+			    }
 			String tituloParental = trozo[2];
+			String comida = trozo[3];
 			Boolean preparacion = null; 
-			if (String.valueOf(trozo[3].trim()) == "none") {
+			if (String.valueOf(trozo[4].trim()) == "none") {
 				preparacion = false;}
 			else {
 				preparacion= true;}
-			Double mates = Double.parseDouble(trozo[4].trim());
-			Double lectura = Double.parseDouble(trozo[5].trim());
-			Double escritura = Double.parseDouble(trozo[6].trim());
-			LocalDate fecha = LocalDate.parse(trozo[7].trim(), 
-					DateTimeFormatter.ofPattern("dd/MM/yyyy"));	
-			Integer duracion = Integer.parseInt(trozo[8].trim());
-	        res = new EstudianteImpl(genero, grupo,duracion, tituloParental, preparacion, mates, lectura, escritura, fecha);
+			Double mates = Double.parseDouble(trozo[5].trim());
+			Double lectura = Double.parseDouble(trozo[6].trim());
+			Double escritura = Double.parseDouble(trozo[7].trim());
+			LocalDate fecha = LocalDate.parse(trozo[8].trim(), 
+					DateTimeFormatter.ofPattern("d/MM/yyyy"));	
+			Integer duracion = Integer.parseInt(trozo[9].trim());
+	        res = new EstudianteImpl(genero, grupo,duracion,comida, tituloParental, preparacion, mates, lectura, escritura, fecha);
 			return res;
 		}
 
