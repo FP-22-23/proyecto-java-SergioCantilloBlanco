@@ -31,14 +31,14 @@ public class FactoriaEstudiantes {
 			Checkers.check("El formato de la línea no es adecuado", trozo.length == 10);
 			String genero =  trozo[0].trim();
 			grupo grupo = null;
-			    if (String.valueOf(trozo[1].trim()) == "groupA") {
+			    if (String.valueOf(trozo[1]).equals("group A")) {
 			    	grupo = grupo.A;}
-			    else if (String.valueOf(trozo[1].trim()) == "groupB"){
+			    else if (String.valueOf(trozo[1]).equals("group B")){
 			    	grupo = grupo.B;
-			    }else if (String.valueOf(trozo[1].trim()) == "groupC"){
+			    }else if (String.valueOf(trozo[1]).equals("group C")){
 			    	grupo = grupo.C;
 			    }
-			    else if (String.valueOf(trozo[1].trim()) == "groupD"){
+			    else if (String.valueOf(trozo[1]).equals("group D")){
 			    	grupo = grupo.D;
 			    }
 			    else {
@@ -47,10 +47,10 @@ public class FactoriaEstudiantes {
 			String tituloParental = trozo[2];
 			String comida = trozo[3];
 			Boolean preparacion = null; 
-			if (String.valueOf(trozo[4].trim()) == "none") {
-				preparacion = false;}
-			else {
-				preparacion= true;}
+			     if (String.valueOf(trozo[4].trim()).equals("completed")) {
+				     preparacion = true;}
+			     else {
+				     preparacion= false;}
 			Double mates = Double.parseDouble(trozo[5].trim());
 			Double lectura = Double.parseDouble(trozo[6].trim());
 			Double escritura = Double.parseDouble(trozo[7].trim());

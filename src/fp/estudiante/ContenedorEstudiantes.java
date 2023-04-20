@@ -60,11 +60,14 @@ public class ContenedorEstudiantes {
     	return this.estudiante.stream()
     			.anyMatch(d -> d.getDuracion().compareTo(80) >= 0);  			
     }
-    public Map<String, Long> obtenerNumeroDeComprasPorCatergoria(){
-		return this.estudiante.stream()
-				.collect(Collectors.groupingBy(EstudianteImpl::getGenero,
-						Collectors.counting()));
+    public Map<Integer, List<EstudianteImpl>> ObtenerEstudiantePorDebajoMediaMinima(Integer MediaMinima){
+		return estudiante.stream().filter(estudiante -> estudiante.getMedia()<= MediaMinima)
+				.collect(Collectors.groupingBy(EstudianteImpl::getMedia));
+
 	}
+    public Map<String, Long> ObtenerNumeroEstudiantesPorGeneroQueEstudio(){
+    	return estudiante.stream().filter(estudiante -> estudiante.getPreparacion() == true).collect(Collectors.groupingBy(EstudianteImpl::getGenero, Collectors.counting()));
+    }
     
     
     

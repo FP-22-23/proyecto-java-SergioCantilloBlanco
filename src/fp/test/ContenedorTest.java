@@ -19,11 +19,14 @@ public class ContenedorTest {
 
 
 		//testConstructor();
-		añadirEstTest();
+		//añadirEstTest();
 		//testEliminarEst();
-		testMenorMedia();
-		testCalcularEpisodiosPorAño();
-		testestudiantesTardones();
+		//testMenorMedia();
+		//testCalcularEpisodiosPorAño();
+		//testestudiantesTardones();
+		//TestObtenerEstudiantePorDebajoMediaMinima();
+		TestObtenerNumeroEstudiantesPorGeneroQueEstudio();
+
 	}
 		//Test
 		
@@ -56,6 +59,8 @@ public class ContenedorTest {
 			System.out.println("Después de borrar a un estudiante quedaría así: " + estudiante);
 			System.out.println(estudiante);
 		}
+
+		
 	// me falta el de size y addall
 
 		
@@ -70,16 +75,22 @@ public class ContenedorTest {
 		private static void testCalcularEpisodiosPorAño() {
 			System.out.println("Testeo de numeroDeEstudiantesPorMes");
 			Integer numero = estudiante.numeroDeEstudiantesPorMes(LocalDate.of(2000, 8, 30));  
-			System.out.println("Hay " + numero + " estdudiantes que realizaron el examen en el mes 8.");
+			System.out.println("Hay " + numero + " estudiantes que realizaron el examen en el mes 8.");
 		}
 
 		private static void testestudiantesTardones() {
 			System.out.println("Testeo de estudiantesTardones");
-			System.out.println("hubo algun estudiante que tardo mas de 80 min en terminar el examen.");
+			System.out.println("¿hubo algun estudiante que tardo mas de 80 min en terminar el examen?");
 			System.out.println(estudiante.estudiantesTardones());
 		}
-		
-		
+		private static void TestObtenerEstudiantePorDebajoMediaMinima() {
+			System.out.println("Testeo de ObtenerEstudiantePorDebajoMediaMinima");
+			System.out.println(estudiante.ObtenerEstudiantePorDebajoMediaMinima(35));
+		}
+		private static void TestObtenerNumeroEstudiantesPorGeneroQueEstudio() {
+			System.out.println("Testeo de ObtenerNumeroEstudiantesPorGeneroQueEstudio");
+			System.out.println(estudiante.ObtenerNumeroEstudiantesPorGeneroQueEstudio());
+		}
 		
 		
 		
