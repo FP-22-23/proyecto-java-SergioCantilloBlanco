@@ -12,7 +12,7 @@ public class TestFactoria {
 		}
 
 		private static void testEstudiantes() {
-				System.out.println("Test de los estudiantes en el registro: ");
+				System.out.println("Test de los estudiantes dentro del registro: ");
 				ContenedorEstudiantes estudiante = FactoriaEstudiantes.leeEstudiante("C:\\Users\\34684\\eclipse-workspace\\proyecto-java-SergioCantilloBlanco\\Data\\StudentsPerformance - StudentsPerformance.csv");
 				System.out.println("Estudiantes: " + estudiante);
 				
