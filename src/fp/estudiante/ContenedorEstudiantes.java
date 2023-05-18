@@ -3,10 +3,15 @@ package fp.estudiante;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -21,6 +26,8 @@ public class ContenedorEstudiantes {
 	public ContenedorEstudiantes(Stream<EstudianteImpl> st) {
 		this.estudiante = st.collect(Collectors.toList());
 	}
+	
+	
 	
 	//Basico
 	public void añadirEst(EstudianteImpl f) {          
@@ -70,6 +77,44 @@ public class ContenedorEstudiantes {
     }
     
     
+    //METODOS TERCERA ENTREGA
+    
+    public EstudianteImpl estudianteMaximaMedia() {
+    	return estudiante.stream().max(Comparator.comparing(EstudianteImpl::getMedia)).get();
+    	}
+    	
+    public List<EstudianteImpl> notasMujeresMatesordenadasMayorAMenor() {
+    	return estudiante.stream().filter(f->f.getGenero().equals("female")).sorted(Comparator.comparing(EstudianteImpl::getMates).reversed()).toList();
+    	}
+    
+    public List<Double> getlistaDeNotasLectura() {
+    	return estudiante.stream().collect(Collectors.mapping(EstudianteImpl::getLectura, Collectors.toList()));
+    	
+    }
+    
+    public Map<String, Double> mujerHombreConMayorMedia() {
+    	return this.estudiante.stream()
+    			.collect(Collectors.toMap(EstudianteImpl::getGenero, EstudianteImpl::getMates, Double::max));
+    }
+    
+    public SortedMap<String, List<Double>>tresPeoresNotasPorGenero(Integer n){
+    	return   estudiante.stream()
+    			.collect(Collectors.groupingBy(EstudianteImpl::getGenero,TreeMap::new,
+    					Collectors.collectingAndThen(Collectors.toList(), lv->seleccionaest(lv, n))));
+    	
+    }
+    
+    //FUNCION AUX
+    public List<Double> seleccionaest(List<EstudianteImpl> l, Integer n){
+    	return l.stream().sorted(Comparator.comparing(EstudianteImpl::getMates))
+    			.map(EstudianteImpl::getMates)
+    			.limit(n)
+    			.collect(Collectors.toList());
+    }
+    
+    public String MayorMediaEntreHombreMujer() {
+    	return this.mujerHombreConMayorMedia().entrySet().stream().max(Comparator.comparing(Entry::getValue)).get().getKey();
+    }
     
     
 	@Override

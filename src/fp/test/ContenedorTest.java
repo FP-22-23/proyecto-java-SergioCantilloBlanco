@@ -25,10 +25,16 @@ public class ContenedorTest {
 		//testCalcularEpisodiosPorAño();
 		//testestudiantesTardones();
 		//TestObtenerEstudiantePorDebajoMediaMinima();
-		TestObtenerNumeroEstudiantesPorGeneroQueEstudio();
+		//TestObtenerNumeroEstudiantesPorGeneroQueEstudio();
+		//TestestudianteMaximaMedia();
+		//TestnotasMujeresMatesordenadasMayorAMenor();
+		//TestgetlistaDeNotasLectura();
+		//TestmujerHombreConMayorMedia();
+		//TesttresPeoresNotasPorGenero();
+		TestMayorMediaEntreHombreMujer();
 
 	}
-		//Test
+		
 		
 
 		
@@ -61,9 +67,6 @@ public class ContenedorTest {
 		}
 
 		
-	// me falta el de size y addall
-
-		
 		
 		//MÉTODOS STREAM: Tratamientos secuenciales(I) (Apartado 4 del proyecto).	
 		private static void testMenorMedia() {
@@ -92,11 +95,35 @@ public class ContenedorTest {
 			System.out.println(estudiante.ObtenerNumeroEstudiantesPorGeneroQueEstudio());
 		}
 		
+		private static void TestestudianteMaximaMedia() {
+			System.out.println("Testeo de estudianteMaximaMedia");
+			System.out.println(estudiante.estudianteMaximaMedia());
+		}
 		
+		private static void TestnotasMujeresMatesordenadasMayorAMenor() {
+			System.out.println("Testeo de notasMujeresMatesordenadasMayorAMenor");
+			System.out.println( estudiante.notasMujeresMatesordenadasMayorAMenor());
+		}
 		
+		private static void TestgetlistaDeNotasLectura() {
+			System.out.println("Testeo de getlistaDeNotasLectura");
+			System.out.print(estudiante.getlistaDeNotasLectura());
+		}
 		
+		private static void TestmujerHombreConMayorMedia() {
+			System.out.println("Testeo de mujerHombreConMayorMedia");
+			System.out.println(estudiante.mujerHombreConMayorMedia());
+		}
 		
+		private static void TesttresPeoresNotasPorGenero() {
+			System.out.println("Testeo de tresPeoresNotasPorGenero");
+			System.out.print(estudiante.tresPeoresNotasPorGenero(3));
+		}
 		
+		private static void TestMayorMediaEntreHombreMujer() {
+			System.out.println("Testeo de MayorMediaEntreHombreMujer");
+			System.out.print(estudiante.MayorMediaEntreHombreMujer());
+		}
 		
 		
 		
