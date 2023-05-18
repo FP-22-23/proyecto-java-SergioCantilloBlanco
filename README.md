@@ -108,7 +108,7 @@ Clase contenedora de los objetos de tipo Estudiante.
 **Constructores**: 
 
 - C1: Constructor por defecto. Crea un objeto de tipo Estudiante sin ningun Estudiante almacenado.
-- C2: C3: Constructor con un parámetro de tipo Stream<EstudianteImpl>. Crea un objeto de tipo Estudiante con los estudiantes incluidos en el Stream dado
+- C2: Constructor con un parámetro de tipo Stream<EstudianteImpl>. Crea un objeto de tipo Estudiante con los estudiantes incluidos en el Stream dado
 - ...
 
 **Restricciones**:
@@ -123,5 +123,14 @@ Clase contenedora de los objetos de tipo Estudiante.
 
 **Otras operaciones**:
  
--	_método 1_: Descripción del método 1.
-- ...
+-	Metodo MenorMedia : Dado un parametro con la media minima se muestran las medias superiores a esta media minima.
+- Metodo NumeroDeEstudiantesPorMes : cuenta cuantos estudiantes hay por el mes que se introduce por parametro.
+ - Metodo estudiantesTardones : Muestra True si hay estudiantes que han tardado mas de 80 min en terminar el examen.
+ - Metodo ObtenerEstudiantesPorDebajoDeMediaMinima : Introduzco como parametro una media minima y el metodo devuelve un map con clave la media y valor una lista del objeto EstudianteImpl
+ -Metodo ObtenerNumeroEstudiantesPorGeneroQueEstudio: Map que tiene como clave genero y como valor el numero de estudiantes que tienen ese genero que estudiaron.
+ -Metodo estudianteMaximaMedia: calcula el estudiante con la maxima media
+ - Metodo notasMujeresMatesordenadasMayorAMenor : devuelve una lista de estudiantes mujeres de mayor a menor dependiendo de su media.
+ - Metodo getlistaDeNotasLectura : devuelve una lista con las notas de lectura
+ -Metodo mujerHombreConMayorMedia: Devuelve un mapa con los generos como las claves y las maximas medias como valores.
+ -Metodo tresPeoresNotasPorGenero: devuelve un map con los generos como claves y una lista de tres peores notas de mates por genero.
+ -Metodo MayorMediaEntreHombreMujer: toma mujerHombreConMayorMedia y calcula cual de ellos tiene la mayor media de todas.
